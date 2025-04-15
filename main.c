@@ -2,7 +2,7 @@
 #include "hash.h"
 
 int main() {
-    HashNivel1* hash = criarHash(); // cria a hash
+    Hash1* hash = criarHash(); // cria a hash
 
     // inserçao de chaves
     inserir(hash, "João");
