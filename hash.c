@@ -21,8 +21,8 @@ int hash2(char* chave) {
     return soma % TAM_LISTAS;
 }
 // cria a hash de dois niveis e inicializa os ponteiros
-HashNivel1* criarHash() {
-    HashNivel1* nova = malloc(sizeof(HashNivel1));
+Hash1* criarHash() {
+    Hash1* nova = malloc(sizeof(Hash1));
     for (int i = 0; i < TAM_NIVEL1; i++) {
         nova->tabelas[i] = NULL;
     }
