@@ -30,12 +30,12 @@ HashNivel1* criarHash() {
 }
 
 // insere uma chave
-void inserir(HashNivel1* hash, char* chave) {
+void inserir(Hash1* hash, char* chave) {
     int idx1 = hash1(chave); // indice do primeiro nivel
     
     // se nao existir a tabela do segundo nivel, cria
     if (hash->tabelas[idx1] == NULL) {
-        hash->tabelas[idx1] = malloc(sizeof(HashNivel2));
+        hash->tabelas[idx1] = malloc(sizeof(Hash2));
         for (int i = 0; i < TAM_LISTAS; i++) {
             hash->tabelas[idx1]->listas[i] = NULL; // inicializa as listas como vazias
         }
@@ -50,7 +50,7 @@ void inserir(HashNivel1* hash, char* chave) {
 }
 
 // busca por uma chave e retorna o ponteiro para o nodo (ou null se nao encontrar)
-Nodo* buscar(HashNivel1* hash, char* chave) {
+Nodo* buscar(Hash1* hash, char* chave) {
     int idx1 = hash1(chave);
     if (hash->tabelas[idx1] == NULL) return NULL; // nao tem nada nesse indice
 
