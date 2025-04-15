@@ -12,18 +12,18 @@ typedef struct Nodo {
 } Nodo;
 
 // tabela hash de segundo nivel 
-typedef struct HashNivel2 {
+typedef struct Hash2 {
     Nodo* listas[TAM_LISTAS]; // vetor de ponteiros p/ lista
-} HashNivel2;
+} Hash2;
 
 // struct da tabela hash de primeiro nivel
 typedef struct {
-    HashNivel2* tabelas[TAM_NIVEL1]; // vetor de ponteiros p/ tabela de segundo nivel
-} HashNivel1;
+    Hash2* tabelas[TAM_NIVEL1]; // vetor de ponteiros p/ tabela de segundo nivel
+} Hash1;
 
 // funçoes
-HashNivel1* criarHash(); // cria e inicia a hash
-void inserir(HashNivel1* hash, char* chave); // insere a chave
-Nodo* buscar(HashNivel1* hash, char* chave); // busca a chave
+Hash1* criarHash(); // cria e inicia a hash
+void inserir(Hash1* hash, char* chave); // insere a chave
+Nodo* buscar(Hash1* hash, char* chave); // busca a chave
 
 #endif
